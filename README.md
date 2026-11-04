@@ -10,7 +10,7 @@ Custom element: `<ucjc-identidad>`
 |---|---|---|
 | Sebastián Blanco (responsable) | | [@sebasxblanco](https://github.com/sebasxblanco) |
 | Olivia Troitiño Frydrych | olivia.troitinofrydrych@alumno.ucjc.edu | [@oliviatroitino](https://github.com/oliviatroitino) |
-| Ingrid Carvalhais Silva | ingrid.carvalhaissilva@alumno.ucjc.edu | |
+| Ingrid Carvalhais Silva | ingrid.carvalhaissilva@alumno.ucjc.edu | [@IngridCarvalhais](https://github.com/IngridCarvalhais) |
 | Fernando Melero Muñoz | fmeleromunoz@gmail.com | [@FerMelero](https://github.com/FerMelero) |
 | Giordano Fabio Castilla García | giordano.fcg@gmail.com | [@Giordano-jpg](https://github.com/Giordano-jpg) |
 
