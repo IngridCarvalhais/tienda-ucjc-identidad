@@ -17,9 +17,13 @@ Custom element: `<ucjc-identidad>`
 ## Cómo arrancarlo
 
 ```bash
-npm install
+npm ci
+npm test
+npm run build
 npm run dev
 ```
+
+Requiere Node.js 20.19+ o 22.12+.
 
 ## Evento de sesión (`@1`)
 
@@ -44,6 +48,8 @@ La pieza funciona de forma independiente, sin backend. El registro es simulado y
 - Correo: `ana@alumno.ucjc.edu`
 - Contraseña: `ucjc2026`
 
+En la pestaña de inicio de sesión, **Demo rápida** inicia sesión directamente con este usuario de prueba.
+
 ```js
 window.addEventListener('ucjc:identidad:sesion-cambiada@1', (event) => {
   console.log(event.detail);
@@ -54,4 +60,15 @@ Al cargar como módulo remoto, se registra `<ucjc-identidad>` y se exporta por d
 
 ## Publicación
 
-El build genera `dist/remote.js` para cargar como módulo ES. En GitHub Pages la URL prevista es `https://ucjc-ecommerce-identidad.github.io/tienda-ucjc-identidad/remote.js`. Los eventos `sesion-solicitada` y `sesion-consultada` no forman parte del contrato `@1`; si se necesitan, se propondrán en otro PR.
+Al publicar un tag `v*`, GitHub Actions ejecuta los tests y genera `dist/remote.js`; después publica el build en `gh-pages/<tag>/`. Por ejemplo, `v0.2.0` se sirve desde:
+
+`https://ucjc-ecommerce-identidad.github.io/tienda-ucjc-identidad/v0.2.0/remote.js`
+
+Para publicar una versión:
+
+```bash
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+Configura GitHub Pages para publicar desde la rama `gh-pages`, carpeta raíz (`/`). En repositorios de organización, permite que Actions escriba en esa rama. Los eventos `sesion-solicitada` y `sesion-consultada` no forman parte del contrato `@1`; si se necesitan, se propondrán en otro PR.

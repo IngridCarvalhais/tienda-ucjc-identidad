@@ -25,6 +25,12 @@ class UcjcIdentidad extends HTMLElement {
         this.render();
         this.emitirCambioSesion();
       }
+
+      if (event.target.closest('[data-accion="demo-rapida"]')) {
+        this.usuario = { ...DEMO_USER };
+        this.render();
+        this.emitirCambioSesion();
+      }
     });
 
     this.shadowRoot.addEventListener('submit', (event) => {
@@ -100,6 +106,7 @@ class UcjcIdentidad extends HTMLElement {
       input { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #cbd4e2; border-radius: 10px; color: inherit; font: inherit; }
       .primary { width: 100%; margin-top: 6px; background: #102b69; color: #fff; }
       .primary:hover { background: #193d88; }
+      .demo { width: 100%; border: 1px solid #cbd4e2; background: #fff; color: #102b69; }
       .hint { margin: 16px 0 0; padding: 12px 14px; border-radius: 10px; background: #f2f6ff; color: #435474; font-size: 13px; }
       .error { min-height: 20px; margin: 0; color: #b42318; font-size: 14px; }
       [hidden] { display: none !important; }
@@ -134,6 +141,7 @@ class UcjcIdentidad extends HTMLElement {
           </label>
           <p class="error" data-error="login" aria-live="polite"></p>
           <button class="primary" type="submit">Entrar</button>
+          <button class="demo" type="button" data-accion="demo-rapida">Demo rápida</button>
         </form>
         <form data-formulario="registro" ${this.modo !== 'registro' ? 'hidden' : ''}>
           <label>Nombre
